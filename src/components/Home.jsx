@@ -46,7 +46,7 @@ export default function Home() {
         <div>
              <div className='container-fluid mt-4'>
              <div className='mb-2'> 
-             <SearchBar />
+             <SearchBar link={url}/>
              </div>
                <button className="btn btn-light" onClick={prev}>Prev</button>
                <button className="btn btn-primary" onClick={next}>Next</button>
