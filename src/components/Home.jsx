@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import Card from './Card';
 import { AppContext } from '../services/Provider';
+import SearchBar from './SearchBar';
 
 
 export default function Home() {
@@ -44,10 +45,17 @@ export default function Home() {
     return (
         <div>
              <div className='container-fluid mt-4'>
+             <div className='mb-2'> 
+             <SearchBar />
+             </div>
+               <button className="btn btn-light" onClick={prev}>Prev</button>
+               <button className="btn btn-primary" onClick={next}>Next</button>
+               </div>
+               {dataApi != null ? dataApi.map((dato, i)  => <Card data={dato} key={i} />) : <h1>No funciona</h1>}
+               <div className='container-fluid mt-4'>
                <button className="btn btn-light" onClick={prev}>Prev</button>
                <button className="btn btn-primary" onClick={next}>Next</button>
              </div>
-             {dataApi != null ? dataApi.map((dato, i)  => <Card data={dato} key={i} />) : <h1>No funciona</h1>}
         </div>
     )
 }
